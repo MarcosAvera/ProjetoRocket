@@ -79,11 +79,15 @@ body *{
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+    animation: slide-back 0.4s ;
+}
+
+#btn button:hover{
+    outline: 8px solid var(--highlight-color);
 }
 
 .light #btn button{
-    right: 0;
-    left: initial;
+    animation: slide-in 0.4s forwards;
 }
 
 #btn span{
@@ -148,4 +152,22 @@ footer{
     padding: 24px 0;
     text-align: center;
     font-size: 14px;
+}
+
+@keyframes slide-in{
+    from{
+       left: 0; 
+    }
+    to{
+        left: 50%;
+    }
+}
+
+@keyframes slide-back{
+    from{
+        left: 50%
+    }
+    to{
+        left: 0;
+    }
 }
